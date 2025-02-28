@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    {% load bootstrap5 %}
+    {% bootstrap_css %}
+    {% bootstrap_javascript %}
+</head>
+<body>
+    <div class="container">
+    <h1>login</h1>
+    <form action="{% url 'login' %}" method="post" class="form-control">
+        {% csrf_token %}
+        <div class="row w-25" >
+    
+        <input type="text" placeholder="enter username" name="username">
+        <input type="password" placeholder="enter password" name="password">
+        <br>
+        <button class="mb-10"> submit</button>
+        {% if error_message %}
+        <div class="alert alert-danger mt-3" role="alert">
+            {{ error_message }}
+        </div>
+        {% endif %}
+        
+        <h4>not a member? signup</h4>
+        <button class="w-10"><a href=" {% url 'register' %}">register</a></button>
+      
+
+        </div>  
+    </form>
+    
+
+    </div>
+    
+</body>
+</html>
