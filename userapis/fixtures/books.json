@@ -1,0 +1,182 @@
+[
+    {
+        "model": "userapis.books",
+        "pk": 1,
+        "fields": {
+            "name": "One Piece",
+            "author": "Eiichiro Oda",
+            "price": 500
+        }
+    },
+    {
+        "model": "userapis.books",
+        "pk": 2,
+        "fields": {
+            "name": "Naruto",
+            "author": "Masashi Kishimoto",
+            "price": 450
+        }
+    },
+    {
+        "model": "userapis.books",
+        "pk": 3,
+        "fields": {
+            "name": "Attack on Titan",
+            "author": "Hajime Isayama",
+            "price": 550
+        }
+    },
+    {
+        "model": "userapis.books",
+        "pk": 4,
+        "fields": {
+            "name": "Death Note",
+            "author": "Tsugumi Ohba",
+            "price": 400
+        }
+    },
+    {
+        "model": "userapis.books",
+        "pk": 5,
+        "fields": {
+            "name": "Demon Slayer",
+            "author": "Koyoharu Gotouge",
+            "price": 520
+        }
+    },
+    {
+        "model": "userapis.books",
+        "pk": 6,
+        "fields": {
+            "name": "Jujutsu Kaisen",
+            "author": "Gege Akutami",
+            "price": 530
+        }
+    },
+    {
+        "model": "userapis.books",
+        "pk": 7,
+        "fields": {
+            "name": "Tokyo Revengers",
+            "author": "Ken Wakui",
+            "price": 490
+        }
+    },
+    {
+        "model": "userapis.books",
+        "pk": 8,
+        "fields": {
+            "name": "Fullmetal Alchemist",
+            "author": "Hiromu Arakawa",
+            "price": 460
+        }
+    },
+    {
+        "model": "userapis.books",
+        "pk": 9,
+        "fields": {
+            "name": "Hunter x Hunter",
+            "author": "Yoshihiro Togashi",
+            "price": 500
+        }
+    },
+    {
+        "model": "userapis.books",
+        "pk": 10,
+        "fields": {
+            "name": "Chainsaw Man",
+            "author": "Tatsuki Fujimoto",
+            "price": 480
+        }
+    },
+    {
+        "model": "userapis.books",
+        "pk": 11,
+        "fields": {
+            "name": "Black Clover",
+            "author": "Yūki Tabata",
+            "price": 470
+        }
+    },
+    {
+        "model": "userapis.books",
+        "pk": 12,
+        "fields": {
+            "name": "Bleach",
+            "author": "Tite Kubo",
+            "price": 440
+        }
+    },
+    {
+        "model": "userapis.books",
+        "pk": 13,
+        "fields": {
+            "name": "Fairy Tail",
+            "author": "Hiro Mashima",
+            "price": 460
+        }
+    },
+    {
+        "model": "userapis.books",
+        "pk": 14,
+        "fields": {
+            "name": "Dragon Ball",
+            "author": "Akira Toriyama",
+            "price": 510
+        }
+    },
+    {
+        "model": "userapis.books",
+        "pk": 15,
+        "fields": {
+            "name": "Berserk",
+            "author": "Kentaro Miura",
+            "price": 600
+        }
+    },
+    {
+        "model": "userapis.books",
+        "pk": 16,
+        "fields": {
+            "name": "Solo Leveling",
+            "author": "Chugong",
+            "price": 550
+        }
+    },
+    {
+        "model": "userapis.books",
+        "pk": 17,
+        "fields": {
+            "name": "Vinland Saga",
+            "author": "Makoto Yukimura",
+            "price": 580
+        }
+    },
+    {
+        "model": "userapis.books",
+        "pk": 18,
+        "fields": {
+            "name": "Blue Lock",
+            "author": "Muneyuki Kaneshiro",
+            "price": 490
+        }
+    },
+    {
+        "model": "userapis.books",
+        "pk": 19,
+        "fields": {
+            "name": "Spy x Family",
+            "author": "Tatsuya Endo",
+            "price": 520
+        }
+    },
+    {
+        "model": "userapis.books",
+        "pk": 20,
+        "fields": {
+            "name": "Fire Force",
+            "author": "Atsushi Ōkubo",
+            "price": 480
+        }
+    }
+]

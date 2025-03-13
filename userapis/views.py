@@ -4,6 +4,7 @@ from django.template import loader
 from django.contrib.auth.models import User
 from django.views.decorators.csrf import csrf_exempt
 from django.contrib.auth import authenticate, login, logout
+from .models import Books
 
 
 @csrf_exempt
@@ -41,5 +42,7 @@ def register(request):
 
 @csrf_exempt
 def main(request):
-    return render(request, 'main.html')
+    books=Books.objects.all()
+
+    return render(request, 'main.html',{'books':books})
 # Create your views here.
