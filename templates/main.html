@@ -18,9 +18,9 @@
             </ul>
             <ul class="navbar-nav ms-auto">
               
-                <li class="nav-item mx-3"><a href="" class="nav-link">Cart</a></li>
-                <li class="nav-item mx-3"><a href="" class="nav-link">Logout</a></li>
-                <li class="nav-item mx-3"><a href="" class="nav-link">Profile</a></li>
+                <li class="nav-item mx-3"><a href="{% url 'cart' %}" class="nav-link">Cart</a></li>
+                <li class="nav-item mx-3"><a href="{% url 'logout'%}" class="nav-link">Logout</a></li>
+                <li class="nav-item mx-3"><a href="{% url 'profile'%}" class="nav-link">Profile</a></li>
             </ul>
         </div>
     </nav>
@@ -31,7 +31,7 @@
         <img src="" alt="">
         <div class="name">{{ book.name}}</div>
         <div class="id">{{ book.id }}</div>
-        <div class="price">{{book.price}}</div>
+        <div class="price"> {{book.price}} Rs.</div>
         <button>add to cart</button>
 
     </div>

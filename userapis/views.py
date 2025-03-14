@@ -45,4 +45,17 @@ def main(request):
     books=Books.objects.all()
 
     return render(request, 'main.html',{'books':books})
+
+@csrf_exempt
+def cart(request):
+    return render(request,'cart.html')
+
+
+@csrf_exempt
+def profile(request):
+    return render(request,'profile.html')
+
+@csrf_exempt
+def logout_page(request):
+    return render(request, 'logout.html')
 # Create your views here.
