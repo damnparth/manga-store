@@ -5,7 +5,7 @@ from django.contrib.auth.models import User
 from django.views.decorators.csrf import csrf_exempt
 from django.contrib.auth import authenticate, login, logout
 from .models import Books
-
+from django.contrib.auth.decorators import login_required
 
 @csrf_exempt
 def login_data(request):
@@ -52,10 +52,24 @@ def cart(request):
 
 
 @csrf_exempt
+@login_required
 def profile(request):
+    #print('hello')
+    
+    
+
+    
+    #return render(request,'profile.html',{'user':request.user, 'profile':request.user.profile})
     return render(request,'profile.html')
 
 @csrf_exempt
+#   @login_required
 def logout_page(request):
+    
     return render(request, 'logout.html')
+
+def confirm_logout(request):
+    logout(request)
+    print('logged out mwah <3')
+    return render(request, 'login.html')
 # Create your views here.

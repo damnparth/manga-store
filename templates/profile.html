@@ -4,13 +4,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    {% load bootstrap5 %}
+    {% bootstrap_css %}
+    {% bootstrap_javascript %}
 </head>
 <body>
     <div class="container">
         <h1>profile page</h1>
-       <div class="form-control">
+       <div class="form-control ">
+        <div class="row w-25">
+        <form action="/profile/">
         <input type="text" placeholder="name">
-        <input type="text" placeholder="">
+        <input type="text" placeholder="username">
+        <input type="email" placeholder="email">
+        <input type="text" placeholder="address">
+        
+        <button>update</button>
+     </form>
+        </div>
+    
 
        </div>
     </div>
