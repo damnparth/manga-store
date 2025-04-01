@@ -10,16 +10,21 @@
 </head>
 <body>
     <div class="container">
+       
         <h1>profile page</h1>
        <div class="form-control ">
         <div class="row w-25">
-        <form action="/profile/">
-        <input type="text" placeholder="name">
-        <input type="text" placeholder="username">
-        <input type="email" placeholder="email">
-        <input type="text" placeholder="address">
+        <form  method ="POST" action="/profile/">
+            {% csrf_token %}
+        
+        <input type="text" placeholder="username" value="{{user.username}}" disabled>
+        <input type="email" placeholder="email" value="{{user.email}}" disabled>
+        <input type="text" placeholder="name"  >
+        <input type="text" placeholder="address" >
+      
         
         <button>update</button>
+      
      </form>
         </div>
     

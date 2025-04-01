@@ -43,24 +43,47 @@ def register(request):
 @csrf_exempt
 def main(request):
     books=Books.objects.all()
+    
 
     return render(request, 'main.html',{'books':books})
 
 @csrf_exempt
 def cart(request):
-    return render(request,'cart.html')
+    cart=request.session.get('cart',{}) #cart ka session uthaya
+    cart_items=[] #list/array mein cart items store kiya
+    for book_id,quantity in cart.items():
+        book=Books.objects.get(id=book_id)
+        cart_items.append({'book':book,'quantity':quantity})
+    
+
+
+
+    return render(request,'cart.html',{'cart_items':cart_items})
+
+@csrf_exempt
+def add_to_cart(request):
+    cart=request.session['cart']
+    
+
+
+
 
 
 @csrf_exempt
 @login_required
 def profile(request):
     #print('hello')
+    if(request.method=='POST'):
+        print(request.POST)
+    
+
+    
     
     
 
     
     #return render(request,'profile.html',{'user':request.user, 'profile':request.user.profile})
-    return render(request,'profile.html')
+    return render(request,'profile.html',{'user':request.user})
 
 @csrf_exempt
 #   @login_required
@@ -72,4 +95,9 @@ def confirm_logout(request):
     logout(request)
     print('logged out mwah <3')
     return render(request, 'login.html')
+
+
+
+
+
 # Create your views here.
