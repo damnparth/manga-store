@@ -1,11 +1,12 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from django.http import HttpResponse
 from django.template import loader
 from django.contrib.auth.models import User
 from django.views.decorators.csrf import csrf_exempt
 from django.contrib.auth import authenticate, login, logout
-from .models import Books
+from .models import *
 from django.contrib.auth.decorators import login_required
+from django.contrib import messages 
 
 @csrf_exempt
 def login_data(request):
@@ -54,6 +55,7 @@ def cart(request):
     for book_id,quantity in cart.items():
         book=Books.objects.get(id=book_id)
         cart_items.append({'book':book,'quantity':quantity})
+        print(cart_items)
     
 
 
@@ -61,8 +63,25 @@ def cart(request):
     return render(request,'cart.html',{'cart_items':cart_items})
 
 @csrf_exempt
-def add_to_cart(request):
-    cart=request.session['cart']
+@login_required
+def add_to_cart(request, id):
+    cart = request.session.get('cart', {}) 
+    
+    if str(id) in cart:
+        cart[str(id)] += 1  
+    else:
+        cart[str(id)] = 1  
+
+    request.session['cart'] = cart  #cart update kiya
+    request.session.modified = True  
+
+    print("Updated Cart:", request.session['cart']) 
+    messages.success(request, "Added to cart successfully!")
+
+     
+    
+    return redirect('main')  # Redirect to cart page
+    
     
 
 

@@ -10,7 +10,8 @@ class Books(models.Model):
 class Cart(models.Model):
     user=models.OneToOneField(User, on_delete=models.CASCADE) #cuz one cart for one user
 
-class CartItem(models.Model): #why cartItem? we already storing books na? ANS: cartItem makes it easier to handle quantities
+class CartItem(models.Model):
+    user=models.OneToOneField(User, on_delete=models.CASCADE,null=True) #why cartItem? we already storing books na? ANS: cartItem makes it easier to handle quantities
     cart=models.ForeignKey(Cart,on_delete=models.CASCADE)
     book=models.ForeignKey(Books,on_delete=models.CASCADE)
     quantity=models.IntegerField(default=1)

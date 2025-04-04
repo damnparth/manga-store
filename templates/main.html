@@ -24,6 +24,11 @@
             </ul>
         </div>
     </nav>
+    {% if messages %}
+    {% for message in messages %}
+        <div class="alert alert-success">{{ message }}</div>
+    {% endfor %}
+    {% endif %}
 
     <div class="row">
         {% for book in books %}
@@ -32,7 +37,10 @@
         <div class="name">{{ book.name}}</div>
         <div class="id">{{ book.id }}</div>
         <div class="price"> {{book.price}} Rs.</div>
+        <a href="{% url 'add_to_cart' book.id %}">
+
         <button>add to cart</button>
+    </a>
 
     </div>
     {% endfor %}
