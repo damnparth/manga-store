@@ -81,6 +81,19 @@ def add_to_cart(request, id):
      
     
     return redirect('main')  # Redirect to cart page
+
+@csrf_exempt
+@login_required
+def delete_from_cart(request,id):
+    cart=request.session.get('cart',{})
+    if str(id) in cart:
+        del cart[str(id)]
+        request.session['cart']=cart
+        request.session.modified=True
+        print('deleted successfully')
+    
+
+    return redirect('cart')
     
     
 
@@ -114,6 +127,7 @@ def confirm_logout(request):
     logout(request)
     print('logged out mwah <3')
     return render(request, 'login.html')
+
 
 
 

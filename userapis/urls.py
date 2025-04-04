@@ -9,6 +9,7 @@ urlpatterns = [
     path('profile/',views.profile,name="profile"),
     path('logout/',views.logout_page,name="logout"),
     path('confirm/',views.confirm_logout, name="confirm"),
-    path('add-to-cart/<int:id>/', views.add_to_cart, name='add_to_cart')
+    path('add-to-cart/<int:id>/', views.add_to_cart, name='add_to_cart'),
+    path('delete-from-cart/<int:id>',views.delete_from_cart,name='delete_from_cart')
     
 ]
